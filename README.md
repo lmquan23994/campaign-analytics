@@ -60,7 +60,7 @@ Output files:
 
 **Location**: [data_processor.go](data_processor.go)
 
-- **Multi-core CPU Utilization**: Uses `runtime.NumCPU()` to automatically determine optimal worker count
+- **Multi-core CPU Utilization**: Uses `runtime.NumCPU()` to automatically determine number of workers. Alternatively, optimization can be achieved by specifying the number of workers for parallel processing. Note that a larger number of workers does not necessarily mean faster processing
 - **Goroutine Worker Pool**: Implements a worker pool pattern with channels for distributing work across CPU cores
 - **Concurrent Chunk Processing**: Multiple chunks are processed simultaneously, significantly reducing total processing time
 - **Impact**: Linear performance scaling with CPU cores - an 8-core system processes data ~8x faster than single-threaded approach
