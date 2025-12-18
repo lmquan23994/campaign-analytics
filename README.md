@@ -77,7 +77,7 @@ Output files:
 
 **Location**: [metrics_ranker.go](metrics_ranker.go)
 
-- **Min Heap for Highest CTR, Lowest CPA **: Uses `container/heap` to maintain top k campaigns without full sort
+- **Min Heap for Highest CTR, Lowest CPA**: Uses `container/heap` to maintain top k campaigns without full sort
 - **Heap Algorithm**:
   - Maintain heap of size k with smallest/largest element at root
   - For each new element: compare with root, pop and push if better
