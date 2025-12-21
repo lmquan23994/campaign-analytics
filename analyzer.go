@@ -49,14 +49,14 @@ func (a *CampaignAnalyzer) Analyze(inputFile string, outputFolder string) error 
 	}
 
 	fmt.Println("Calculating top 10 campaigns by CTR")
-	top10CTRFile := filepath.Join(outputFolder, "top10_highest_ctr.csv")
+	top10CTRFile := filepath.Join(outputFolder, "top10_ctr.csv")
 	top10CTR := a.ranker.GetTopByHighestCTR(metrics, 10)
 	if err := a.writer.WriteMetrics(top10CTRFile, top10CTR); err != nil {
 		return fmt.Errorf("failed to write top 10 CTR: %w", err)
 	}
 
 	fmt.Println("Calculating top 10 campaigns by lowest CPA")
-	top10CPAFile := filepath.Join(outputFolder, "top10_lowest_cpa.csv")
+	top10CPAFile := filepath.Join(outputFolder, "top10_cpa.csv")
 	top10CPA := a.ranker.GetTopByLowestCPA(metrics, 10)
 	if err := a.writer.WriteMetrics(top10CPAFile, top10CPA); err != nil {
 		return fmt.Errorf("failed to write top 10 CPA: %w", err)
