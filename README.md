@@ -51,7 +51,7 @@ Calculating top 10 campaigns by lowest CPA
 Output files:
   - result/campaign_stats.csv (all campaigns)
   - result/top10_ctr.csv (top 10 highest CTR)
-  - result/top10_lowest_cpa.csv (top 10 lowest CPA)
+  - result/top10_cpa.csv (top 10 lowest CPA)
 ```
 
 ## Performance & Memory Optimizations

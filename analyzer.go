@@ -48,7 +48,7 @@ func (a *CampaignAnalyzer) Analyze(inputFile string, outputFolder string) error 
 		return fmt.Errorf("failed to write stats: %w", err)
 	}
 
-	fmt.Println("Calculating top 10 campaigns by CTR")
+	fmt.Println("Calculating top 10 campaigns by highest CTR")
 	top10CTRFile := filepath.Join(outputFolder, "top10_ctr.csv")
 	top10CTR := a.ranker.GetTopByHighestCTR(metrics, 10)
 	if err := a.writer.WriteMetrics(top10CTRFile, top10CTR); err != nil {
